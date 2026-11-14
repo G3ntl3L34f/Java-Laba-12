@@ -1,0 +1,15 @@
+public class DepositThread extends Thread {
+    private BankAccount account;
+    private int amount;
+
+    public DepositThread(BankAccount account, int amount, String name) {
+        super(name);
+        this.account = account;
+        this.amount = amount;
+    }
+
+    @Override
+    public void run() {
+        account.deposit(amount);
+    }
+}
